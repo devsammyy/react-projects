@@ -20,16 +20,7 @@ body {
 }
 h1 {
   position: absolute;
-  top: 50px;
-}
-h1::after {
-  content: "";
-  width: 20px;
-  border: 5px solid rgb(0, 119, 255);
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
+  top: 20px;
 }
 
 .review {
@@ -65,4 +56,23 @@ h4 {
   justify-content: center;
   background-color: rgb(0, 119, 255);
   border-radius: 50%;
+}
+
+.btn-container {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.next-btn,
+.prev-btn {
+  margin: 0 1rem;
+  border: none;
+  background: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.next-btn:active,
+.prev-btn:active {
+  background-color: rgba(0, 0, 0, 0.5);
 }

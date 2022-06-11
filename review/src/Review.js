@@ -1,10 +1,34 @@
 import React, { useState } from "react";
-import people from "./data";
-import { FaChevronLeft, FaQuoteRight } from "react-icons/fa";
+import data from "./data";
+import { FaChevronLeft, FaQuoteRight, FaChevronRight } from "react-icons/fa";
 
 const Review = () => {
   const [index, setIndex] = useState(0);
-  const { name, job, text, image } = people[index];
+  const { name, job, text, image } = data[index];
+
+  const monitorIndex = (index) => {
+    if (index > data.length - 1) {
+      return 0;
+    }
+    if (index < 0) {
+      return data.length - 1;
+    }
+    return index;
+  };
+
+  const nextBtn = () => {
+    setIndex((index) => {
+      const newIndex = index + 1;
+      return monitorIndex(newIndex);
+    });
+  };
+
+  const prevBtn = () => {
+    setIndex((index) => {
+      const newIndex = index - 1;
+      return monitorIndex(newIndex);
+    });
+  };
 
   return (
     <section className="review">
@@ -14,15 +38,15 @@ const Review = () => {
           <FaQuoteRight />
         </span>
       </div>
-      <h4>{name}</h4>
+      <h2>{name}</h2>
       <p>{job}</p>
       <p>{text}</p>
 
       <div className="btn-container">
-        <button className="next-btn">
+        <button className="next-btn" onClick={nextBtn}>
           <FaChevronLeft />
         </button>
-        <button className="prev-btn">
+        <button className="prev-btn" onClick={prevBtn}>
           <FaChevronRight />
         </button>
       </div>
