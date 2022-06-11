@@ -39,7 +39,7 @@ const Review = () => {
         </span>
       </div>
       <h2>{name}</h2>
-      <p>{job}</p>
+      <p style={{ fontStyle: "italic", fontWeight: "bold" }}>{job}</p>
       <p>{text}</p>
 
       <div className="btn-container">
