@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+  background-color: rgb(23, 89, 151);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.App {
+  background-color: #fff;
+  padding: 1rem;
+  width: 450px;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(0, 0, 0, 0.4);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 1rem;
+  animation: slide 2s ease infinite;
+}
+
+.article {
+  margin-block: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slide {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
