@@ -35,7 +35,11 @@ header {
   border-radius: 0.5rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
-
+button {
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+}
 @keyframes slide {
   from {
     height: 0;
