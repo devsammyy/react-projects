@@ -29,24 +29,23 @@ const EditStudent = (props) => {
     };
     axios
       .put(
-        "http://localhost:4000/students/update-student/" +
+        "https://my-apiv1.herokuapp.com/students/update-student/" +
           props.match.params.id,
         studentObject
       )
       .then((res) => {
-        console.log("Student successfully updated");
+        alert("Student successfully updated");
       })
       .catch((error) => {
         console.log(error);
       });
-    // Redirect to Student List
-    props.history.push("/student-list");
   };
 
   useEffect(() => {
     axios
       .get(
-        "http://127.0.0.1:4000/students/edit-student/" + props.match.params.id
+        "https://my-apiv1.herokuapp.com/students/edit-student/" +
+          props.match.params.id
       )
       .then((res) => {
         setName(res.data.name);
@@ -54,10 +53,6 @@ const EditStudent = (props) => {
         setRoll(res.data.roll);
       })
       .catch((error) => console.log(error));
-
-    return () => {
-      console.log("clean");
-    };
   }, [props]);
 
   return (
@@ -92,7 +87,7 @@ const EditStudent = (props) => {
             onChange={onChangeStudentRollno}
           />
         </Form.Group>
-        <Button variant="danger" size="lg" block="block" type="submit">
+        <Button variant="success" size="lg" block="block" type="submit">
           Update Student
         </Button>
       </Form>

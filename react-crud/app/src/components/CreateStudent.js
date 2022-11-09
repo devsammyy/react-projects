@@ -25,8 +25,11 @@ const CreateStudent = () => {
       roll,
     };
     axios
-      .post("http://localhost:4000/students/create-student", studentObject)
-      .then((res) => console.log(res.data));
+      .post(
+        "https://my-apiv1.herokuapp.com/students/create-student",
+        studentObject
+      )
+      .then((res) => alert("Student successfully created!"));
     setName("");
     setEmail("");
     setRoll("");
@@ -59,7 +62,7 @@ const CreateStudent = () => {
           />
         </Form.Group>
         <Button
-          variant="danger"
+          variant="success"
           size="lg"
           block="block"
           type="submit"

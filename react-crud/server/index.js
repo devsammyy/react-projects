@@ -7,14 +7,16 @@ const bodyParser = require("body-parser");
 const studentRoute = require("./routes/router");
 // Connecting mongoDB Database
 mongoose
-  .connect("mongodb://127.0.0.1:27017/Student")
+  .connect(
+    "mongodb+srv://devsammyy:GAD1212wgmja@sammy.dna4ejb.mongodb.net/Student?retryWrites=true&w=majority"
+  )
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
     );
   })
   .catch((err) => {
-    console.error("Error connecting to mongo", err.reason);
+    console.error("Error connecting to mongo", err);
   });
 app.use(bodyParser.json());
 app.use(

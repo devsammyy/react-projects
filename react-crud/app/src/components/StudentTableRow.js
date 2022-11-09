@@ -9,9 +9,9 @@ const StudentTableRow = (props) => {
 
   const deleteStudent = () => {
     axios
-      .delete("http://localhost:4000/students/delete-student/" + _id)
+      .delete("https://my-apiv1.herokuapp.com/students/delete-student/" + _id)
       .then((res) => {
-        console.log("Student successfully deleted!");
+        alert("Student successfully deleted!");
       })
       .catch((error) => {
         console.log(error);
